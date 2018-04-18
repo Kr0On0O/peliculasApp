@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-4">
+  <img [src]="pelicula|peliculaImagen"class=img-fluid>
+  </div>
+  <div class="col-md-8">
+    <ul  class="list-group">
+      <li class="list-group-item">{{pelicula.original_title}} - <span  class="badge badge-info" *ngFor="let genero of pelicula.genres"> {{genero.name}} </span>
+         <span *ngFor="let idioma of pelicula.spoken_languages" class="badge badge-pill badge-danger">{{idioma.name}}</span></li>
+      <li class="list-group-item">{{pelicula.overview}}<p><span class="badge badge-primary">Nota: {{pelicula.vote_average}}</span></p>
+         <p><span *ngFor="let productora of pelicula.production_companies" class="badge badge-pill badge-secondary">{{productora.name}}</span></p>
+       </li>
+      <li class="list-group-item">Fecha de lanzamiento: {{pelicula.release_date}}</li>
+    </ul>
+    <br>
+    <button (click)="back()" class="btn btn-outline-warning" type="button" name="button">Regresar</button>
+  </div>
+
+</div>

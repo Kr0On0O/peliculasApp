@@ -1,0 +1,10 @@
+<div class="card-columns">
+  <div class="card" *ngFor="let pelicula of peliculas">
+    <img class="card-img-top" src="https://image.tmdb.org/t/p/w300{{pelicula.poster_path}}">
+    <div class="card-body">
+      <h5 class="card-tittle">{{pelicula.title}}</h5>
+      <p class="card-text text-justify">{{pelicula.overview |slice:0:250}}...</p>
+      <a [routerLink]="['/Detalle',pelicula.id]"class="btn btn-primary">Ver Detalles</a>
+    </div>
+  </div>
+</div>
