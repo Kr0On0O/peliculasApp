@@ -1,3 +1,5 @@
+<p *ngIf="!auth.isAuthenticated()">Necesitas logearte</p>
+<div *ngIf="auth.isAuthenticated()">
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-3">PeliculasAPP</h1>
@@ -5,12 +7,10 @@
   </div>
 </div>
 
-<div class="container">
+<div  class="container">
   <br>
-
-
-<app-galeria [peliculas]="peliculas" titulo="Cartelera"></app-galeria>
-<app-galeria [peliculas]="populares" titulo="Populares"></app-galeria>
-<app-galeria [peliculas]="popularesNinos" titulo="Populares Niños"></app-galeria>
-
+  <app-galeria [peliculas]="peliculas" titulo="Cartelera"></app-galeria>
+  <app-galeria [peliculas]="populares" titulo="Populares"></app-galeria>
+  <app-galeria [peliculas]="popularesNinos" titulo="Populares Niños"></app-galeria>
+</div>
 </div>

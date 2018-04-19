@@ -6,6 +6,10 @@ import {HttpModule,JsonpModule} from '@angular/http';
 import {DatePipe} from '@angular/common';
 
 import {PeliculasService} from './services/peliculas.service';
+import {AuthService} from './services/auth.service';
+import {AuthGuardService} from './services/auth-guard.service';
+
+
 import {app_routing} from './app.route';
 
 import { AppComponent } from './app.component';
@@ -16,6 +20,7 @@ import { InfantilComponent } from './component/infantil/infantil.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { PeliculaImagenPipe } from './pipes/pelicula-imagen.pipe';
 import { GaleriaComponent } from './component/galeria/galeria.component';
+import { ChatComponent } from './component/chat/chat.component';
 
 
 @NgModule({
@@ -27,7 +32,8 @@ import { GaleriaComponent } from './component/galeria/galeria.component';
     InfantilComponent,
     NavbarComponent,
     PeliculaImagenPipe,
-    GaleriaComponent
+    GaleriaComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +44,9 @@ import { GaleriaComponent } from './component/galeria/galeria.component';
   ],
   providers: [
     PeliculasService,
-    DatePipe
+    DatePipe,
+    AuthService,
+    AuthGuardService
   ],
   bootstrap: [AppComponent]
 })

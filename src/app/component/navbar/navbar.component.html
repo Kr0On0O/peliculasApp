@@ -7,6 +7,8 @@
     <div class="navbar-nav">
       <a class="nav-item nav-link"[routerLink]="['Home']" routerLinkActive="active">Home</a>
       <a class="nav-item nav-link"  [routerLink]="['Infantil']"Active="active" >Infantil</a>
+      <button *ngIf="!auth.isAuthenticated()" class="btn btn-outline-info" (click)="login()" type="button" name="button">Login</button>
+      <button *ngIf="auth.isAuthenticated()" class="btn btn-outline-danger" (click)="logout()" type="button" name="button">Logout</button>
     </div>
   </div>
   <form class="form-inline">
